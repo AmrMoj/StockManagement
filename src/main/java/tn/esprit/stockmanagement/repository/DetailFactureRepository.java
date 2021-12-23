@@ -12,7 +12,7 @@ import java.util.Date;
  * @project IntelliJ IDEA
  */
 public interface DetailFactureRepository extends JpaRepository<DetailFacture, Long> {
-    //@Query("select df.qte * p.prixUnitaire from DetailFacture df join df.produit p  where p.idProduit= :idProduit and Facture.dateFacture between :startDate and :endDate")
-    //
-    // float getRevenuBrutProduit(@Param("idProduit") Long idProduit,@Param("startDate") Date startDate,@Param("endDate") Date endDate);
+    @Query("select (p.prixUnitaire* df.qte) from Produit p join p.detailFactures df join df.facture f where f.dateFacture between :startDate and :endDate and p.idProduit=:idProduit")
+
+    float getRevenuBrutProduit(@Param("idProduit") Long idProduit,@Param("startDate") Date startDate,@Param("endDate") Date endDate);
 }

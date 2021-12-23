@@ -3,6 +3,7 @@ package tn.esprit.stockmanagement.service;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+import tn.esprit.stockmanagement.controller.exception.NoDataFoundException;
 import tn.esprit.stockmanagement.entity.Client;
 import tn.esprit.stockmanagement.entity.Facture;
 import tn.esprit.stockmanagement.repository.ClientRepository;
@@ -50,7 +51,7 @@ public class FactureServiceImpl implements FactureService{
     @Transactional
     @Override
     public Facture addFacture(Facture f, long idClient) {
-        Client c = clientRepository.findById(idClient).get();
+        Client c = clientRepository.findById(idClient).orElseThrow(NoDataFoundException::new);
         f.setClient(c);
         log.info("Adding Facture attached to client: "+ c.getPrenom() + " "+ c.getNom());
         return factureRepository.save(f);

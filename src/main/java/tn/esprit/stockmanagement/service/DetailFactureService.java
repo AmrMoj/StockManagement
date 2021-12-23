@@ -7,5 +7,5 @@ import java.util.Date;
  * @project IntelliJ IDEA
  */
 public interface DetailFactureService {
-    //float getRevenuBrutProduit(Long idProduit, Date startDate, Date endDate);
+    float getRevenuBrutProduit(Long idProduit, Date startDate, Date endDate);
 }

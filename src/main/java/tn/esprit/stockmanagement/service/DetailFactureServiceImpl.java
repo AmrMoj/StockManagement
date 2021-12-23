@@ -16,8 +16,8 @@ public class DetailFactureServiceImpl implements DetailFactureService{
     @Autowired
     DetailFactureRepository detailFactureRepository;
 
-    /*@Override
+    @Override
     public float getRevenuBrutProduit(Long idProduit, Date startDate, Date endDate) {
         return detailFactureRepository.getRevenuBrutProduit(idProduit,startDate,endDate);
-    }*/
+    }
 }

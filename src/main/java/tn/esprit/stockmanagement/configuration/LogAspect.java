@@ -43,6 +43,7 @@ public class LogAspect {
     @AfterReturning(value = "execution(* tn.esprit.stockmanagement.service.*.*(..))",
             returning = "retVal")
     public void afterReturningAdvice(JoinPoint jp, Object retVal){
+        if (retVal!=null)
         log.info("Method : "  + jp.getSignature().getName()+" Returning: " + retVal.getClass().getSimpleName());
         }
 }

@@ -2,6 +2,7 @@ package tn.esprit.stockmanagement.controller;
 
 import io.swagger.annotations.ApiOperation;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.HttpEntity;
 import org.springframework.web.bind.annotation.*;
 import tn.esprit.stockmanagement.entity.Facture;
 import tn.esprit.stockmanagement.service.FactureService;

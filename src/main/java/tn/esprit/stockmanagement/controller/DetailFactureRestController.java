@@ -23,9 +23,9 @@ public class DetailFactureRestController {
     @Autowired
     DetailFactureService detailFactureService;
 
-    /*@ApiOperation("Get revenue brut par produit")
+    @ApiOperation("Get revenue brut par produit")
     @GetMapping("/getRevenueBrutProduit/{produit-id}/{startDate}/{endDate}")
-    public float getRevenueBrutProduit(@PathVariable("produit-id") long idProduit, @PathVariable("start-date") @DateTimeFormat(pattern = "yyyy-MM-dd") Date startDate, @PathVariable("end-date") @DateTimeFormat(pattern = "yyyy-MM-dd") Date endDate){
+    public float getRevenueBrutProduit(@PathVariable("produit-id") long idProduit, @PathVariable("startDate") @DateTimeFormat(pattern = "yyyy-MM-dd") Date startDate, @PathVariable("endDate") @DateTimeFormat(pattern = "yyyy-MM-dd") Date endDate){
         return detailFactureService.getRevenuBrutProduit(idProduit,startDate,endDate);
-    }*/
+    }
 }
